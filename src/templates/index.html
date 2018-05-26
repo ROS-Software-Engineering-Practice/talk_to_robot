@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+            <title>Fractal by HTML5 UP</title>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" href="static/style.css" />
+    </head>
+    <body>
+        <div class="container">
+        <input type="text" id="parameter" />
+		<button id="para_submit" class="button blue big">submit</button>
+        </div>
+        <script>
+            window.addEventListener("DOMContentLoaded", function () {
+                //var num = $('#parameter').val();
+                //var num = document.getElementById("parameter").value;
+                //alert(num);
+                
+                $('#para_submit').on('click', function () {
+                    var num = $('#parameter').val();
+                    $.post('/upload', {parameter:num});
+                });
+
+            }, false);
+         </script>
+        <script type=text/javascript src="{{
+          url_for('static', filename='jquery.js') }}"></script>
+
+    </body>
+</html>
