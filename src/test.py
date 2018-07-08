@@ -14,7 +14,7 @@ rospy.init_node('talker', anonymous=True)
 
 @app.route('/')
 def simpleRos():
-	return render_template('index.html')
+    return render_template('example_simple_exportwav.html')
 
 @app.route('/upload', methods = ['POST', 'GET'])
 def upload():
